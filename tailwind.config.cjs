@@ -14,11 +14,15 @@ module.exports = {
       textColor: {
         default: "var(--color-text)",
         offset: "var(--color-text-offset)",
+        card: "var(--color-text-card)",
+        button: "var(--color-text-button)",
       },
       backgroundColor: {
         primary: "var(--color-background-primary)",
         secondary: "var(--color-background-secondary)",
         offset: "var(--color-background-offset)",
+        button: "var(--color-background-button)",
+        card: "var(--color-background-card)",
       },
       borderColor: {
         default: "var(--color-border)",
