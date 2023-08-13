@@ -3,6 +3,13 @@ export interface CompatibilityItem {
   title: string;
   url: string;
 }
+export interface LinksUteisItem {
+  name: string;
+  url: string;
+  thumbnail_url: string;
+  description: string;
+  tags?: Array<string>;
+}
 
 export interface BeneficiosItem {
   description: string;
