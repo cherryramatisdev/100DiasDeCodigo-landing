@@ -6,11 +6,28 @@ const links: Array<LinksUteisItem> = [
   {
     name: "Trilha.info",
     description:
-      "Você conhecerá colegas e mentores (e provavelmente amigos!), que te ajudarão na jornada nos dias difíceis.",
+      "Trilhas de aprendizado em programação totalmente em pt-br!",
     tags: ["Brasileiro", "Back-end", "Front-end", "DevOps"],
-    url: "https://fodase.com",
+    url: "https://trilha.info",
     thumbnail_url: "https://i.imgur.com/ikPMRq4.png",
   },
+  {
+    name: "Roadmap.sh",
+    description:
+      "Trilhas de aprendizado em programação em inglês com trilhas de todas as áreas.",
+    tags: ["Estrangeiro", "Back-end", "Front-end", "DevOps"],
+    url: "https://roadmap.sh",
+    thumbnail_url: "https://roadmap.sh/images/og-img.png",
+  },
+  {
+    name: "DH Back-end Roadmap",
+    description:
+      "Conteúdos de Back-end focados para quem é iniciante na área.",
+    tags: ["Estrangeiro", "Back-end", "Sistemas Operacionais"],
+    url: "https://roadmap.danielheart.dev",
+    thumbnail_url: "https://roadmap.danielheart.dev/images/roadmap.jpeg",
+  },
+
 ];
 ---
 
@@ -26,15 +43,13 @@ const links: Array<LinksUteisItem> = [
         <div class="max-w-sm overflow-hidden rounded bg-card shadow-lg ">
           <img
             class="w-full"
-            src="https://i.imgur.com/ikPMRq4.png"
+            src={`${link.thumbnail_url}`}
             alt="Sunset in the mountains"
           />
           <div class="px-6 py-4">
-            <div class="mb-2 font-bold text-primary text-xl">Trilha Info</div>
+            <div class="mb-2 font-bold text-primary text-xl">{link.name}</div>
             <p class="text-card text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
+              {link.description}
             </p>
           </div>
           <div class="px-6 pt-4 pb-2">
@@ -45,7 +60,7 @@ const links: Array<LinksUteisItem> = [
             ))}
           </div>
           <div class="px-6 pt-4 pb-2 mb-4">
-            <a href={`${link.url}`} class="bg-button hover:bg-indigo-900 rounded-xl py-3 px-8 font-medium text-button">Link</a>
+            <a href={`${link.url}`} class="bg-button hover:bg-indigo-900 rounded-xl py-3 px-8 font-medium text-button">Acessar Conteúdo</a>
           </div>
         </div>
       ))
