@@ -14,7 +14,7 @@ const links: Array<LinksUteisItem> = [
   {
     name: "Roadmap.sh",
     description:
-      "Trilhas de aprendizado em programação em inglês com trilhas de todas as áreas.",
+      "Trilhas de aprendizado em áreas de tecnologia em inglês.",
     tags: ["Estrangeiro", "Back-end", "Front-end", "DevOps"],
     url: "https://roadmap.sh",
     thumbnail_url: "https://roadmap.sh/images/og-img.png",
@@ -33,11 +33,12 @@ const links: Array<LinksUteisItem> = [
 
 <ContentSection
   title="Links Úteis"
-  id="beneficios"
+  description="Links úteis para quem está começando na área de programação."
+  id="Links"
   align="start"
-  extraclass="sm:pl-8 sm:mx-40"
+  extraclass="xl:pl-8 2xl:mx-40"
 >
-  <div class="grid gap-4 lg:grid-cols-3">
+  <div class="grid gap-4 md:grid-cols-2  lg:grid-cols-3">
     {
       links.map((link) => (
         <div class="max-w-sm overflow-hidden rounded bg-card shadow-lg ">
@@ -48,7 +49,7 @@ const links: Array<LinksUteisItem> = [
           />
           <div class="px-6 py-4">
             <div class="mb-2 font-bold text-primary text-xl">{link.name}</div>
-            <p class="text-card text-base">
+            <p class="text-card text-base line-clamp-2">
               {link.description}
             </p>
           </div>

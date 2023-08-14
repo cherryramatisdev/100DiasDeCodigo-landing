@@ -1,0 +1,154 @@
+---
+import {RankingItem} from "../types";
+import ContentSection from "../layout/content-section.astro";
+import Icon from "astro-icon";
+
+const data: RankingItem[] = [
+{
+    index: 1,
+    github_username: "RenanVidal",
+    name: "Renan Vidal",
+    started_at: "14/03/2023",
+    ended_at: "21/06/2023",
+    stack: [
+    "ReactJS", "JS", "CSS"
+    ],
+    looking_for_job: true,
+    socials: [
+    {
+        favicon: "twitter",
+        social_url: "https://twitter.com/RenanInsane"
+        }
+    ]
+    },
+];
+---
+
+
+<section class="xl:pl-8 2xl:mx-40">
+  <div class="flex flex-col items-start">
+    <h2
+        class="color-secondary text-left font-bold tracking-tight text-4xl mb-2"
+    >
+      Lista de participantes
+    </h2>
+    <p class="color-secondary text-xl text-left font-normal mb-6">Lista das pessoas que terminaram o #100DiasDeCodigo! </p>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="table-auto w-full">
+      <thead class="bg-[#3D3E53] whitespace-nowrap text-white">
+      <tr class=" p-2">
+        <th>Posição</th>
+        <th>Nome</th>
+        <th>Início</th>
+        <th>Fim</th>
+        <th>Stack</th>
+        <th>Procurando emprego?</th>
+        <th>Redes sociais</th>
+      </tr>
+      </thead>
+      <tbody class="whitespace-nowrap text-white">
+      {data.map((participant) => (
+          <tr key={participant.index} >
+            <td class="bg-[#3D3E53]/50" data-label="Posição">{participant.index}</td>
+            <td data-label="Nome">
+              <div class="flex justify-end	items-center">
+                <img src={`https://github.com/${participant.github_username}.png`} alt="Avatar" class="w-8 h-8 rounded-full inline-block mr-2" />
+                {participant.name}
+              </div>
+            </td>
+            <td data-label="Início">{participant.started_at}</td>
+            <td data-label="Fim">{participant.ended_at}</td>
+            <td data-label="Stack">{participant.stack.join(', ')}</td>
+            <td data-label="Procurando emprego?">{participant.looking_for_job ? 'Sim' : 'Não'}</td>
+            <td data-label="Redes sociais" class="social-icons">
+              {participant.socials.map((social) => (
+                  <a class="flex justify-end md:justify-center" key={social.social_url} href={social.social_url} target="_blank" rel="noopener noreferrer" >
+                    <Icon  name={`social/${social.favicon}`} class="w-6 h-6" />
+                  </a>
+              ))}
+            </td>
+          </tr>
+      ))}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+
+
+  table  {
+    background-color: #282834;
+    border-radius: 5px;
+    border-collapse: collapse;
+    overflow: hidden;
+  }
+
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+
+  table td{
+    border: 2px solid #3D3E53;
+  }
+
+  table th {
+    border: 2px solid #3D3E53;
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+
+    table caption {
+      font-size: 1.3em;
+    }
+
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    table tr {
+      border-bottom: 3px solid #3d3e53;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    table td {
+      border-bottom: 1px solid #3d3e53;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+</style>
+

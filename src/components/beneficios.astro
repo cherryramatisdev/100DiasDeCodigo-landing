@@ -51,7 +51,7 @@ const beneficios: Array<BeneficiosItem> = [
 ];
 ---
 
-<ContentSection title="Benefícios" id="beneficios">
+<ContentSection title="Benefícios" description="Fique atento aos benefícios ao participar do desafio #100 Dias de Código." align="center" titleAlign="center"  descriptionAlign="center" id="beneficios">
   <div class="swiper-container mySwiper">
     <ul
       class="swiper-wrapper grid"
@@ -89,6 +89,10 @@ const beneficios: Array<BeneficiosItem> = [
       },
       // when window width is >= 768px
       768: {
+        slidesPerView: 2,
+        spaceBetween: 150,
+      },
+      1200: {
         slidesPerView: 3,
         spaceBetween: 150,
       },

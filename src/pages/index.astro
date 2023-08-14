@@ -8,6 +8,7 @@ import Menu from "../components/menu.astro";
 
 import "@fontsource/inter/variable.css";
 import "~/styles/index.css";
+import Ranking from "../components/ranking.astro";
 
 const { generator, site } = Astro;
 const image = new URL("thumb.png", site);
@@ -76,6 +77,9 @@ const description =
       <LinksUteis />
       <!--       <Compatibility />
       <Showcase /> -->
+    </div>
+    <div class="space-y-24 bg-primary px-8 py-32">
+      <Ranking />
     </div>
     <Footer />
   </body>

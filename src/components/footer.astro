@@ -21,8 +21,9 @@ const links: Array<FooterLink> = [
 ];
 ---
 
-<footer class="relative flex h-64 items-center justify-center">
-  <ul class="relative grid grid-cols-3 gap-8">
+<footer class="relative flex-col h-64 items-center justify-center">
+
+  <ul class="flex gap-8 justify-center mb-6">
     {
       links.map((link) => (
         <li>
@@ -36,6 +37,7 @@ const links: Array<FooterLink> = [
         </li>
       ))
     }
-    
   </ul>
+  <p class="text-center">© 2023 He4rt Devs. Todos os direitos reservados.</p>
 </footer>
+
