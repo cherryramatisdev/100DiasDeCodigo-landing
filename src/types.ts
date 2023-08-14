@@ -16,6 +16,22 @@ export interface BeneficiosItem {
   icon: string;
 }
 
+export interface Social {
+  favicon: string;
+  social_url: string;
+}
+
+export interface RankingItem {
+  index: number;
+  github_username: string;
+  name: string;
+  started_at: string;
+  ended_at: string;
+  stack: string[];
+  looking_for_job: boolean;
+  socials: Social[];
+}
+
 export interface FooterLink {
   description: string;
   icon: string;

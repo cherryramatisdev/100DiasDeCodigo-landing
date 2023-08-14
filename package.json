@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "accordion-js": "^3.3.2",
     "micromodal": "^0.4.10",
     "sharp": "^0.31.2",
