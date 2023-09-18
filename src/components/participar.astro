@@ -8,40 +8,31 @@ import instagram from "../assets/instagramExemplo.png";
 <script>
   const twitter = document.querySelector('button#participacaoTwitter');
   const instagram = document.querySelector('button#participacaoInstagram');
-
   const exibirTwitter = document.querySelectorAll('.exibirTwitter');
   const exibirInstagram = document.querySelectorAll('.exibirInstagram');
 
-  twitter?.classList.add("botaoAtivado");
+  const alternaExibicao = () => {
+    twitter?.classList.toggle("botaoAtivado");
+    instagram?.classList.toggle("botaoAtivado");
 
-  twitter?.addEventListener('click', () => {
-    twitter.classList.add("botaoAtivado");
-    instagram?.classList.remove("botaoAtivado");
     exibirInstagram.forEach((exibicao) => {
-      exibicao.style.display = "none";
-    });
-    exibirTwitter.forEach((exibicao2) => {
-      exibicao2.style.display = "block";
-    });
-  });
-
-  instagram?.addEventListener('click', () => {
-    instagram.classList.add("botaoAtivado");
-    twitter?.classList.remove("botaoAtivado");
-    exibirInstagram.forEach((exibicao) => {
-      exibicao.style.display = "block";
-    });
-    exibirTwitter.forEach((exibicao2) => {
-      exibicao2.style.display = "none";
+      exibicao.style.display = (instagram?.classList.contains('botaoAtivado')) ? 'block' : 'none';
     });
 
-  });
+    exibirTwitter.forEach((exibicao2) => {
+      exibicao2.style.display = (twitter?.classList.contains('botaoAtivado')) ? 'block' : 'none';
+    });
+  };
+
+  twitter?.addEventListener("click", alternaExibicao);
+  instagram?.addEventListener("click", alternaExibicao);
+
 </script>
 
 <ContentSection title="Como participar" id="comoParticipar">
   <Fragment slot="lead">
     <div class="socialMediaOpcoes">
-      <button id="participacaoTwitter" class="botao">Twitter</button>
+      <button id="participacaoTwitter" class="botao botaoAtivado">Twitter</button>
       <button id="participacaoInstagram" class="botao">Instagram</button>
     </div>
     <div class="participarContainer">
@@ -137,7 +128,7 @@ import instagram from "../assets/instagramExemplo.png";
     color: var(--color-text-button);
     font-weight: bold;
   }
-  
+
   .botaoDesativado{
     background-color: red;
   }
