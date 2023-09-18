@@ -63,7 +63,7 @@ import instagram from "../assets/instagramExemplo.gif";
                 <p>
                   <span>Poste um story</span> com seu progresso todos os dias com a hashtag <span>#100DiasDeCodigo</span>
                   marcando a 
-                  <a style="text-decoration: underline; color: #8D3FFF" target="_blank" href="https://instagram.com/heartdevs">He4rt Developers</a>
+                  <a class="instagram" target="_blank" href="https://instagram.com/heartdevs">He4rt Developers</a>
                   no Instagram para que possamos repostar! Crie uma aba #100DiasDeCodigo nos <span>destaques</span> e adicione diáriamente seu progresso!
               </div>
               </p>
@@ -128,6 +128,15 @@ import instagram from "../assets/instagramExemplo.gif";
     background-color: var(--color-primary);
     color: var(--color-text-button);
     font-weight: bold;
+  }
+
+  .instagram {
+    text-decoration: underline;
+    background: linear-gradient(157deg, rgba(249,206,52,1) 0%, rgba(238,42,112,1) 50%, rgba(98,40,208,1) 100%);
+    background: -webkit-linear-gradient(157deg, rgba(249,206,52,1) 0%, rgba(238,42,112,1) 50%, rgba(98,40,208,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .botaoDesativado{
