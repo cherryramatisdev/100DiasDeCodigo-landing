@@ -172,8 +172,26 @@ import instagram from "../assets/instagramExemplo.png";
     justify-content: space-around;
   }
 
+  @media screen and (max-width: 800px) {
+    .participarContainer {
+      flex-direction: column;
+    }
+
+    .texto {
+      width: 100%;
+    }
+
+    .exemplo {
+      width: 100%;
+    }
+  }
+
   .iniciarDesafio{
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .iniciarDesafio p{
