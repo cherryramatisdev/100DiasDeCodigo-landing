@@ -1,69 +1,15 @@
 ---
 import {RankingItem} from "../types";
 import ContentSection from "../layout/content-section.astro";
+import {extractFinishedParticipantsFromMarkdown} from "../utils/extract-finished-participants";
 import Icon from "astro-icon";
 
-const data: RankingItem[] = [
-{
-    index: 1,
-    github_username: "RenanVidal",
-    name: "Renan Vidal",
-    started_at: "14/03/2023",
-    ended_at: "21/06/2023",
-    stack: [
-    "ReactJS", "JS", "CSS"
-    ],
-    looking_for_job: true,
-    socials: [
-    {
-        favicon: "twitter",
-        social_url: "https://twitter.com/RenanInsane"
-        }
-    ]
-    },
-{
-    index: 2,
-    github_username: "lanjoni",
-    name: "João Lanjoni",
-    started_at: "05/06/2023",
-    ended_at: "16/10/2023",
-    stack: [
-      "Crystal", "Elixir", "Erlang", "Open Source", "Devops"
-    ],
-    looking_for_job: false,
-    socials: [
-    {
-        favicon: "twitter",
-        social_url: "https://twitter.com/gutolanjoni"
-        },
-    {
-        favicon: "linkedin",
-        social_url: "https://linkedin.com/in/lanjoni"
-        },
-    ]
-    },
-{
-    index: 3,
-    github_username: "cherryramatisdev",
-    name: "Cherry Ramatis",
-    started_at: "06/06/2023",
-    ended_at: "13/11/2023",
-    stack: [
-      "Ruby", "Artigos Técnicos", "Elixir"
-    ],
-    looking_for_job: true,
-    socials: [
-    {
-        favicon: "twitter",
-        social_url: "https://twitter.com/cherry_ramatis"
-        },
-    {
-        favicon: "linkedin",
-        social_url: "https://linkedin.com/in/cherryramatis"
-        },
-    ]
-    }
-];
+// TODO: maybe we can use the ReadableStream instead of using .text(), that way we can process in a more performant way.
+const content = await fetch(
+  "https://raw.githubusercontent.com/he4rt/100-dias-de-codigo/main/README.md"
+).then((r) => r.text());
+
+const data = extractFinishedParticipantsFromMarkdown(content);
 ---
 
 
